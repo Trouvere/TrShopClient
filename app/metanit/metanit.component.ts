@@ -3,29 +3,28 @@ import { Response} from '@angular/http';
 import { HttpService} from './service/http.service';
 
 @Component({
-    selector: 'my-app',
-    styles:[` 
-            .nav{ clear: both;}
-            a {float: left;}
-            .active a { color: red;}
-        `],
+    selector: 'metanit',
+//    styles:[` 
+//            .nav{ clear: both;}
+//            a {float: left;}
+//            .active a { color: red;}
+//        `],
     template: `
         <div>
         <ul class="nav">
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        <a routerLink="">Главная</a>
+        <a routerLink="/metanit/g">Главная Metanit</a>
         </li>
         <li routerLinkActive="active">
-        <a routerLink="/metanit">Users</a>
+        <a routerLink="/metanit/about">Users</a>
         </li>
         </ul>
         <router-outlet></router-outlet>
         </div>
-        <router-outlet></router-outlet>
 `,
        
         
-        providers: [HttpService]
+
 })
-export class AppComponent implements OnInit { 
+export class MetanitComponent  { 
 }
