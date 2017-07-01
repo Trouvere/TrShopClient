@@ -4,26 +4,43 @@ import {Routes, RouterModule} from "@angular/router";
 
 import { MetanitComponent }   from '../../metanit/metanit.component';
 import { AboutComponent }   from '../../metanit/about.component';
-import { HomeComponent }   from '../../metanit/home.component';
+import { HomeComponentMetanit }   from '../../metanit/home.component';
+import { LoginMenanitComponent }   from '../../metanit/loginMenanit.component';
 //import {IndexComponent} from "../../index/index.component";
 //import {RegisterComponent} from "../../register/register.component";
 //import {LoginComponent} from "../../login/login.component";
 
+import { AuthGuard } from '../../guard/auth.guard';
+//Используется index
+import { LoginComponent } from '../../login/login.component';
+import { HomeComponent } from '../../home/home.component';
 
-//const routes: Routes = [
-//{path: 'registration', component: RegisterComponent},
-//{path: '', component: IndexComponent},
-//{path: 'login', component: LoginComponent}
-//];
+import { RadioButtonCcomponent} from '../../radioButton/index';
 
+
+
+
+
+//const authRoutes: Routes = [
+//                            { path: 'login', component: LoginComponent },
+//                            { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+//                         
+//                            // otherwise redirect to home
+//                            { path: '**', redirectTo: 'home' }
+//                       ];
 const itemRoutes: Routes = [
                             { path: 'about', component: AboutComponent},
-                            { path: 'g', component: HomeComponent},
+                            { path: 'g', component: HomeComponentMetanit },
+                            { path: 'login', component: LoginMenanitComponent },
                         ];
 const appRoutes: Routes =[
-                          { path: 'metanit', component: MetanitComponent},
+//                          { path: 'metanit', component: MetanitComponent},
                           { path: 'metanit', component: MetanitComponent, children: itemRoutes},
-                          { path: '', component: HomeComponent}
+//                          { path: '', component: HomeComponentMetanit }
+//                          { path: 'auth', children:authRoutes }
+                          { path: 'login', component: LoginComponent },
+                          { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+                          { path: 'radio', component: RadioButtonCcomponent }
 
                           ];
 

@@ -1,0 +1,30 @@
+<div>
+	<form action="">
+		<input type="radio" [(ngModel)]="model.n" name="n" value=1>1<br>
+		<input type="radio" [(ngModel)]="model.n" name="n" value="2">2
+	</form>
+	<form action="" *ngIf="model.n==1">
+		<input type="radio" [(ngModel)]="model.sex" name="sex" value="male">Male<br>
+		<input type="radio" [(ngModel)]="model.sex" name="sex" value="female">Female
+	</form>
+	<form action="" *ngIf="model.n==2">
+		<input type="radio" [(ngModel)]="model.sex2" name="sex2" value="male2">Male2<br>
+		<input type="radio" [(ngModel)]="model.sex2" name="sex2"
+			value="female2">Female2
+	</form>
+
+	<input type="button" value="select male" (click)="model.sex='male'">
+	<input type="button" value="select female" (click)="model.sex='female'">
+	<input type="button" value="select male2" (click)="model.sex2='male2'">
+	<input type="button" value="select female2"
+		(click)="model.sex2='female2'">
+	<div>Selected Radio: {{model.n}}</div>
+	<div>Selected Radio: {{model.sex}}</div>
+	<div>Selected Radio: {{model.sex2}}</div>
+</div>
+<div class="form-group">
+  <label for="power">Hero Power</label>
+  <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+  </select>
+</div>

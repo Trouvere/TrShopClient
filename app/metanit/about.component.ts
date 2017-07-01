@@ -1,3 +1,4 @@
+import {Injectable} from '@angular/core';
 import { Component, OnInit} from '@angular/core';
 import { Response} from '@angular/http';
 import { HttpService} from '../service/http.service';
@@ -14,14 +15,29 @@ import { HttpService} from '../service/http.service';
         </li>
         </ul>`
 })
+
+@Injectable()
 export class AboutComponent  implements OnInit { 
     
     
-    users: User[]=[];
+    users: User[]=[
+                   {
+                       "name": "Bob1",
+                       "age": 28
+                   },
+                   {
+                       "name": "Tom",
+                       "age": 45
+                   },
+                   {
+                       "name": "Alice",
+                       "age": 32
+                   }
+               ];
 
 constructor(private httpService: HttpService){}
-ngOnInit(){
-    
+
+ngOnInit(){    
     this.httpService.getData()
     .subscribe((data: Response) => { this.users=data.json();
     console.log(data);    };

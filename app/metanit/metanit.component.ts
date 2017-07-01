@@ -10,6 +10,7 @@ import { HttpService} from './service/http.service';
 //            .active a { color: red;}
 //        `],
     template: `
+    <h3>metanit</h3>
         <div>
         <ul class="nav">
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
@@ -17,6 +18,9 @@ import { HttpService} from './service/http.service';
         </li>
         <li routerLinkActive="active">
         <a routerLink="/metanit/about">Users</a>
+        </li>
+        <li routerLinkActive="active">
+        <a routerLink="/metanit/login">login</a>
         </li>
         </ul>
         <router-outlet></router-outlet>
