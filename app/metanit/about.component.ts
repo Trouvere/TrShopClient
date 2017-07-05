@@ -20,20 +20,20 @@ import { HttpService} from '../service/http.service';
 export class AboutComponent  implements OnInit { 
     
     
-    users: User[]=[
-                   {
-                       "name": "Bob1",
-                       "age": 28
-                   },
-                   {
-                       "name": "Tom",
-                       "age": 45
-                   },
-                   {
-                       "name": "Alice",
-                       "age": 32
-                   }
-               ];
+//    users: User[]=[
+//                   {
+//                       "name": "Bob1",
+//                       "age": 28
+//                   },
+//                   {
+//                       "name": "Tom",
+//                       "age": 45
+//                   },
+//                   {
+//                       "name": "Alice",
+//                       "age": 32
+//                   }
+//               ];
 
 constructor(private httpService: HttpService){}
 

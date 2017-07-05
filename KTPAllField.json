@@ -1,0 +1,12 @@
+{
+  "typeKTPAllField": [
+   "KTPT",
+    "KTPP"
+  ],
+  "powerAllField": [
+    25.0,
+    40.0,
+    63.0,
+    100.0
+  ]
+}

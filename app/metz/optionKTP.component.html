@@ -1,0 +1,84 @@
+<div>
+	<form action="">
+		<input type="radio" [(ngModel)]="model.n" name="n" value=1>1<br>
+		<input type="radio" [(ngModel)]="model.n" name="n" value="2">2
+	</form>
+	<form action="" *ngIf="model.n==1">
+		<input type="radio" [(ngModel)]="model.sex" name="sex" value="male">Male<br>
+		<input type="radio" [(ngModel)]="model.sex" name="sex" value="female">Female
+	</form>
+	<form action="" *ngIf="model.n==2">
+		<input type="radio" [(ngModel)]="model.sex2" name="sex2" value="male2">Male2<br>
+		<input type="radio" [(ngModel)]="model.sex2" name="sex2"
+			value="female2">Female2
+	</form>
+
+	<input type="button" value="select male" (click)="model.sex='male'">
+	<input type="button" value="select female" (click)="model.sex='female'">
+	<input type="button" value="select male2" (click)="model.sex2='male2'">
+	<input type="button" value="select female2"
+		(click)="model.sex2='female2'">
+	<div>Selected Radio: {{model.n}}</div>
+	<div>Selected Radio: {{model.sex}}</div>
+	<div>Selected Radio: {{model.sex2}}</div>
+	{{diagnostic}}
+</div>
+<div class="form-group">
+	<label for="power">Hero Power</label> <select class="form-control"
+		id="power" required>
+		<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+	</select>
+</div>
+
+<div class="form-group">
+	<label for="power">typeKTPAllField</label> <select class="form-control"
+		id="power" required>
+		<option *ngFor="let typeKTP of typeKTPAllField" [value]="typeKTP">{{typeKTP}}</option>
+	</select>
+</div>
+
+<div class="form-group">
+	<label for="power">power</label> <select class="form-control"
+		id="power" required>
+		<option *ngFor="let power of powerAllField" [value]="power">{{power}}</option>
+	</select>
+</div>
+
+
+<div class="container">
+	<h1>Hero Form</h1>
+	<form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+		{{diagnosticModelKT}}
+		<div class="form-group">
+			<label>typeKTP</label> <select class="form-control"
+				formControlName="typeKTP" required [(ngModel)]="modelKTP.typeKTP"
+				#typeKTP>
+				<option *ngFor="let typeKTP of typeKTPAllField" [value]="typeKTP">{{typeKTP}}</option>
+			</select>
+
+			<div class="alert alert-danger"
+				*ngIf="myForm.controls['typeKTP'].invalid && submitted == true">
+				NET TYPE</div>
+			-> <br>TODO: remove this: {{typeKTP.className}}
+		</div>
+
+		<div class="form-group">
+			<label>power</label> <select class="form-control" id="power" required
+				[(ngModel)]="modelKTP.power" formControlName="power" #power>
+				<option *ngFor="let power of powerAllField" [value]="power">{{power}}</option>
+			</select> <br>TODO: remove this: {{power.className}}
+						<div class="alert alert-danger"
+				*ngIf="myForm.controls['power'].invalid && submitted == true">
+				Введите значение power</div>
+		</div>
+
+		<div class="form-group">
+			<button class="btn btn-default" #butt>
+<!-- 				<button class="btn btn-default" [disabled]="myForm.invalid"> -->
+
+					Отправить</button>
+								
+		</div>
+<br>TODO: remove this: butt.className}{{butt.className}} myForm.invalid: {{myForm.invalid}} 
+	</form>
+</div>

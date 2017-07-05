@@ -1,0 +1,14 @@
+<h2>powers</h2>
+<ul class="powers">
+  <li *ngFor="let power of powers"
+    [class.selected]="power === selectedPower"
+    (click)="onSelect(power)">
+    <span class="badge">{{power.id}}</span> {{power.value}}
+  </li>
+</ul>
+<div *ngIf="selectedPower">
+  <h2>
+    {{selectedPower.value | uppercase}} редактировать?
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

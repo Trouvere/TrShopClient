@@ -10,6 +10,10 @@ import { LoginMenanitComponent }   from '../../metanit/loginMenanit.component';
 //import {RegisterComponent} from "../../register/register.component";
 //import {LoginComponent} from "../../login/login.component";
 
+//metz
+import { OptionKTPComponent }   from '../../metz/optionKTP.component';
+
+
 import { AuthGuard } from '../../guard/auth.guard';
 //Используется index
 import { LoginComponent } from '../../login/login.component';
@@ -17,7 +21,7 @@ import { HomeComponent } from '../../home/home.component';
 
 import { RadioButtonCcomponent} from '../../radioButton/index';
 
-
+import { AdminComponent, PowerEditComponent, PowerDetailComponent} from '../../admin/index';
 
 
 
@@ -33,6 +37,11 @@ const itemRoutes: Routes = [
                             { path: 'g', component: HomeComponentMetanit },
                             { path: 'login', component: LoginMenanitComponent },
                         ];
+
+const adminRoutes: Routes = [
+                             { path: 'detailPower/:id', component: PowerDetailComponent },
+                             { path: 'powers',     component: PowerEditComponent },
+                        ];
 const appRoutes: Routes =[
 //                          { path: 'metanit', component: MetanitComponent},
                           { path: 'metanit', component: MetanitComponent, children: itemRoutes},
@@ -41,7 +50,8 @@ const appRoutes: Routes =[
                           { path: 'login', component: LoginComponent },
                           { path: '', component: HomeComponent, canActivate: [AuthGuard] },
                           { path: 'radio', component: RadioButtonCcomponent }
-
+                          { path: 'metz', component: OptionKTPComponent }
+                          { path: 'admin', component: AdminComponent, children: adminRoutes }
                           ];
 
 

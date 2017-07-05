@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }   from '@angular/http';
 
+import { ReactiveFormsModule }   from '@angular/forms';
+
 import { AppComponent }   from './app.component';
 
 import {RoutingModule} from './module/routing/routing.module';
@@ -22,6 +24,9 @@ import { HomeComponent } from './home/home.component';
 
 import { RadioButtonCcomponent, RadioControlValueAccessor } from './radioButton/index';
 
+//metz
+import { OptionKTPComponent } from './metz/index';
+
 ////used to create fake backend
 //import { fakeBackendProvider } from './backend/fake-backend';
 //import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -31,13 +36,14 @@ import { RadioButtonCcomponent, RadioControlValueAccessor } from './radioButton/
 
 @NgModule({
     imports:      [ BrowserModule, FormsModule, HttpModule,
-                    RoutingModule],
+                    RoutingModule, ReactiveFormsModule],
                     
     declarations: [ AppComponent, HomeComponentMetanit, AboutComponent, MetanitComponent,
                     LoginComponent,
                     HomeComponent,
                     LoginMenanitComponent,
-                    RadioButtonCcomponent, RadioControlValueAccessor],
+                    RadioButtonCcomponent, RadioControlValueAccessor,
+                    OptionKTPComponent],
                     
                     providers: [
                                 AuthGuard,

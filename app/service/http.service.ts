@@ -11,18 +11,21 @@ export class HttpService{
 constructor(private http: Http){ }
 
 getData(){
-//  return this.http.get('users.json')
-    console.log(this.token); 
-  let headers = ({ 'Authorization':  this.token }); 
-//    let headers = new Headers({ 'Authorization':  this.token }); 
-
-
-//  let headers = new Headers({headers: headers});
-    let options = new RequestOptions({ headers: headers });
-    
-    return this.http.get('http://localhost:9000/metanit/m', options )
-    console.log
+  return this.http.get('users.json')
+//    console.log(this.token); 
+//  let headers = ({ 'Authorization':  this.token }); 
+//    let options = new RequestOptions({ headers: headers });    
+//    return this.http.get('http://localhost:9000/metanit/m', options )
 }
+
+getKTPAllField(){
+    return this.http.get('KTPAllField.json')
+//      console.log(this.token); 
+  //  let headers = ({ 'Authorization':  this.token }); 
+//      let options = new RequestOptions({ headers: headers });    
+//      return this.http.get('http://localhost:9000/metanit/m', options )
+  }
+
 
 login(username: string, password: string): Observable {
     const body = { username: username, password: password };
