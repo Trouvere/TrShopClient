@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit} from '@angular/core';
-import { Response} from '@angular/http';
-import { HttpService} from './service/http.service';
+
+
 
 @Component({
     selector: 'admin',
@@ -13,9 +13,9 @@ import { HttpService} from './service/http.service';
     <h3>metanit</h3>
         <div>
         <ul class="nav">
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        <a routerLink="/admin/typeKTP">Главная Metanit</a>
-        </li>
+//        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+//        <a routerLink="/admin/typeKTP">Главная Metanit</a>
+//        </li>
         <li routerLinkActive="active">
         <a routerLink="/admin/powers">Users</a>
         </li>

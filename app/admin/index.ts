@@ -1,3 +1,3 @@
-﻿export * from './admin.component.ts';
-export * from './power-detail.component.ts';
-export * from './powerEdit.component.ts';
+﻿export * from './admin.component';
+//export * from './power-edit.component';
+export * from './power-detail.component';

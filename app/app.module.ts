@@ -27,6 +27,7 @@ import { RadioButtonCcomponent, RadioControlValueAccessor } from './radioButton/
 //metz
 import { OptionKTPComponent } from './metz/index';
 
+import { AdminComponent, PowerDetailComponent} from './admin/index';
 ////used to create fake backend
 //import { fakeBackendProvider } from './backend/fake-backend';
 //import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -43,7 +44,9 @@ import { OptionKTPComponent } from './metz/index';
                     HomeComponent,
                     LoginMenanitComponent,
                     RadioButtonCcomponent, RadioControlValueAccessor,
-                    OptionKTPComponent],
+                    OptionKTPComponent, 
+                    AdminComponent, PowerDetailComponent, 
+                    ],
                     
                     providers: [
                                 AuthGuard,

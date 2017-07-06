@@ -12,7 +12,7 @@ import { Location }                 from '@angular/common';
 
 @Component({
   selector: 'power-detail',
-  templateUrl: './power-detail.component.html'
+  templateUrl: 'app/admin/power-detail.component.html'
 
 })
 export class PowerDetailComponent implements OnInit {
