@@ -6,6 +6,8 @@ import { HttpService } from '../service/http.service';
 import { ModelKTPAllField } from './modelKTPAllField';
 import { ModelKTP } from './modelKTP';
 
+//import { ModelKTPAllField, ModelKTP } from '../models/index';
+
 import { NgForm} from '@angular/forms';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 
