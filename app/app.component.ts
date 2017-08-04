@@ -20,15 +20,11 @@ import { HttpService } from './service/http.service';
                  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                  <a routerLink="">Главная</a>
                  </li>
+
                  <li routerLinkActive="active">
-                 <a routerLink="/metanit">metanit</a>
+                 <a routerLink="/metz">Выбор КТП</a>
                  </li>
-                 <li routerLinkActive="active">
-                 <a routerLink="/metz">metz</a>
-                 </li>
-                 <li routerLinkActive="active">
-                 <a routerLink="/radio">radio</a>
-                 </li>
+       
                  <li routerLinkActive="active">
                  <a routerLink="/admin">admin</a>
                  </li>

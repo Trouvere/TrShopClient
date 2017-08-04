@@ -1,34 +1,30 @@
 import './rxjs-extensions';
-
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }   from '@angular/http';
-
 import { ReactiveFormsModule }   from '@angular/forms';
 
 import { AppComponent }   from './app.component';
-
 import {RoutingModule} from './module/routing/routing.module';
 
 
-import { MetanitComponent }   from './metanit/metanit.component';
-import { AboutComponent }   from './metanit/about.component';
-import { HomeComponentMetanit }   from './metanit/home.component';
-import { LoginMenanitComponent }   from './metanit/loginMenanit.component';
-
+//import { MetanitComponent }   from './metanit/metanit.component';
+//import { AboutComponent }   from './metanit/about.component';
+//import { HomeComponentMetanit }   from './metanit/home.component';
+//import { LoginMenanitComponent }   from './metanit/loginMenanit.component';
+import { LoginMenanitComponent }   from './login/loginMenanit.component';
 //Authentication 
 import { AuthGuard } from './guard/auth.guard';
 //Используется index
 import { AuthenticationService, UserService, PowerService } from './service/index';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+//import { LoginComponent } from './login/login.component';
+//import { HomeComponent } from './home/home.component';
 
 import { RadioButtonCcomponent, RadioControlValueAccessor } from './radioButton/index';
 
 //metz
 import { OptionKTPComponent } from './metz/index';
-
 import { HeaderComponent } from './headerandfooter/index';
 
 import { AdminComponent, PowerDetailComponent, PowerEditComponent} from './admin/index';
@@ -43,12 +39,14 @@ import { AdminComponent, PowerDetailComponent, PowerEditComponent} from './admin
     imports:      [ BrowserModule, FormsModule, HttpModule,
                     RoutingModule, ReactiveFormsModule],
                     
-    declarations: [ AppComponent, HomeComponentMetanit, AboutComponent, MetanitComponent,
-                    LoginComponent,
-                    HomeComponent,
+    declarations: [ AppComponent,
+//                    HomeComponentMetanit, AboutComponent, MetanitComponent,
+//                    LoginComponent,
+//                    HomeComponent,
                     LoginMenanitComponent,
                     RadioButtonCcomponent, RadioControlValueAccessor,
-                    OptionKTPComponent, HeaderComponent,
+                    OptionKTPComponent, 
+                    HeaderComponent,
                     AdminComponent, PowerDetailComponent, PowerEditComponent
                     ],
                     
