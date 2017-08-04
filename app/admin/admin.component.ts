@@ -13,9 +13,9 @@
     <h3>metanit</h3>
         <div>
         <ul class="nav">
-//        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-//        <a routerLink="/admin/typeKTP">typeKTP(No work)</a>
-//        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a routerLink="/admin/typeKTP">typeKTP(No work)</a>
+        </li>
         <li routerLinkActive="active">
         <a routerLink="/admin/powers">powers</a>
         </li>

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FORM_DIRECTIVES } from "@angular/common";
-import { RadioControlValueAccessor } from '../radioButton/index';
+import { RadioControlValueAccessor } from '../../radioButton/index';
 //import { bootstrap } from '@angular/platform-browser-dynamic';
-import { PowerService } from '../service/power.service';
-import { Power } from '../models/index';
+import { PowerService } from '../../service/power.service';
+import { Power } from '../../models/index';
 import { Router } from '@angular/router';
 
 import { NgForm} from '@angular/forms';
@@ -11,7 +11,7 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component( {
     selector: "powerEdit",
-    templateUrl: 'app/admin/power-edit.component.html',
+    templateUrl: 'app/admin/power/power-edit.component.html',
 
     directives: [FORM_DIRECTIVES, RadioControlValueAccessor]
 } )
@@ -42,7 +42,7 @@ constructor(
       }
 
       add(): void {
-        this.router.navigate(['/admin/detailPower', 0]);
+        this.router.navigate(['/admin/addPower']);
       }
       
       gotoDetail(): void {

@@ -1,3 +1,7 @@
 ﻿export * from './admin.component';
-export * from './power-edit.component';
-export * from './power-detail.component';
+
+
+//power
+export * from './power/power-edit.component';
+export * from './power/power-detail.component';
+export * from './power/power-new.component';

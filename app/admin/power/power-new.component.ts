@@ -1,42 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { FORM_DIRECTIVES } from "@angular/common";
-import { RadioControlValueAccessor } from '../radioButton/index';
+import { RadioControlValueAccessor } from '../../radioButton/index';
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { PowerService } from '../service/power.service';
+import { PowerService } from '../../service/power.service';
 import { Power } from '../models/index';
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }        from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 import { Observable } from 'rxjs/Rx';
 
 @Component({
-  selector: 'power-detail',
-  templateUrl: 'app/admin/power-detail.component.html'
+  selector: 'power-new',
+  templateUrl: 'app/admin/power/power-new.component.html'
 
 })
-export class PowerDetailComponent implements OnInit {
+export class PowerNewComponent implements OnInit {
   power: Power;
 
 
   constructor(
     private service: PowerService,
-    private route: ActivatedRoute,
+    private router: Router,
     private location: Location
   ) {}
 
   ngOnInit(): void {
  
       
-    this.route.paramMap
-      .switchMap((params: ParamMap) => 
-      
-      this.service.get(params.get('id')))
-      .subscribe(( data: Response ) => {
-          this.power = data.json();
-          console.log( data );
-          } 
-      
+
+          this.power = {
+                  id: 0;
+          value: null;
+      }
 
 
       }
@@ -48,12 +44,16 @@ export class PowerDetailComponent implements OnInit {
       this.service.save(this.power)
                   .subscribe(( data: Response ) => {
           console.log( data );
-                  }
+                  };
+                  setTimeout(() => {
+                      this.location.back();
+                    }, 1000);
+                  
               }
-  goDelete(): void {
-      this.service.delete(this.power.id)
-            .subscribe(( data: Response ) => {
-          console.log( data );
-            }
+//  goDelete(): void {
+//      this.service.delete(this.power.id)
+//            .subscribe(( data: Response ) => {
+//          console.log( data );
+//            }
   
 }

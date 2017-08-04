@@ -27,7 +27,7 @@ import { RadioButtonCcomponent, RadioControlValueAccessor } from './radioButton/
 import { OptionKTPComponent } from './metz/index';
 import { HeaderComponent } from './headerandfooter/index';
 
-import { AdminComponent, PowerDetailComponent, PowerEditComponent} from './admin/index';
+import { AdminComponent, PowerDetailComponent, PowerEditComponent, PowerNewComponent} from './admin/index';
 ////used to create fake backend
 //import { fakeBackendProvider } from './backend/fake-backend';
 //import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -47,7 +47,7 @@ import { AdminComponent, PowerDetailComponent, PowerEditComponent} from './admin
                     RadioButtonCcomponent, RadioControlValueAccessor,
                     OptionKTPComponent, 
                     HeaderComponent,
-                    AdminComponent, PowerDetailComponent, PowerEditComponent
+                    AdminComponent, PowerDetailComponent, PowerEditComponent, PowerNewComponent
                     ],
                     
                     providers: [

@@ -1,13 +1,11 @@
 <div *ngIf="power">
 	<h2>{{power.name}} details!</h2>
-	<div>
-		<label>id: </label>{{power.id}}
-	</div>
+
 	<div>
 		<label>name: </label> <input [(ngModel)]="power.value"
 			placeholder="name" />
 	</div>
 	<button (click)="goBack()">Back</button>
 	<button (click)="goSave()">Save</button>
-	<button (click)="goDelete()">Delete</button>
+
 </div>

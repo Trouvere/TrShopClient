@@ -22,7 +22,7 @@ import { AuthGuard } from '../../guard/auth.guard';
 //login
 import { LoginMenanitComponent } from '../../login/loginMenanit.component';
 //Admin
-import { AdminComponent, PowerEditComponent, PowerDetailComponent } from '../../admin/index';
+import { AdminComponent, PowerEditComponent, PowerDetailComponent, PowerNewComponent } from '../../admin/index';
 //metz
 import { OptionKTPComponent } from '../../metz/optionKTP.component';
 
@@ -41,6 +41,7 @@ import { OptionKTPComponent } from '../../metz/optionKTP.component';
 
 const adminRoutes: Routes = [
     { path: 'detailPower/:id', component: PowerDetailComponent },
+    { path: 'addPower', component: PowerNewComponent },
     { path: 'powers', component: PowerEditComponent },
 ];
 const appRoutes: Routes = [
