@@ -1,14 +1,13 @@
-<h2>powers</h2>
+<h2>powers222</h2>
 <ul class="powers">
-  <li *ngFor="let power of powers"
-    [class.selected]="power === selectedPower"
-    (click)="onSelect(power)">
-    <span class="badge">{{power.id}}</span> {{power.value}}
-  </li>
+	<li *ngFor="let power of powers"
+		[class.selected]="power === selectedPower" (click)="onSelect(power)">
+		<span class="badge">{{power.id}}</span> {{power.value}}
+	</li>
 </ul>
+	<button (click)="add()">Р”РѕР±Р°РІРёС‚СЊ</button>
 <div *ngIf="selectedPower">
-  <h2>
-    {{selectedPower.value | uppercase}} редактировать?
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
+	<h2>{{selectedPower.value }} СЂРµРґР°РєС‚РёСЂРѕРІР°С‚СЊ?</h2>
+	<button (click)="gotoDetail()">View Details</button>
+	<button (click)="goDelete()">Delete</button>
 </div>

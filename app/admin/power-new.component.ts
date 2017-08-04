@@ -28,15 +28,8 @@ export class PowerDetailComponent implements OnInit {
   ngOnInit(): void {
  
       
-    this.route.paramMap
-      .switchMap((params: ParamMap) => 
-      
-      this.service.get(params.get('id')))
-      .subscribe(( data: Response ) => {
-          this.power = data.json();
-          console.log( data );
-          } 
-      
+
+          this.power = 
 
 
       }

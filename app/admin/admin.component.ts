@@ -14,10 +14,10 @@
         <div>
         <ul class="nav">
 //        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-//        <a routerLink="/admin/typeKTP">Главная Metanit</a>
+//        <a routerLink="/admin/typeKTP">typeKTP(No work)</a>
 //        </li>
         <li routerLinkActive="active">
-        <a routerLink="/admin/powers">Users</a>
+        <a routerLink="/admin/powers">powers</a>
         </li>
         </ul>
         <router-outlet></router-outlet>

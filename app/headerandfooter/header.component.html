@@ -1,0 +1,12 @@
+
+<div *ngIf="canActivate;else other_content">
+  <h2>Здравствуйте, {{username}} 
+  </h2>
+  <button (click)="logout()">Выйти</button>
+</div>
+
+<ng-template #other_content>
+  <button (click)="login()">Войти</button>
+</ng-template>
+
+

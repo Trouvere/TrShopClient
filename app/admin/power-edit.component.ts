@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FORM_DIRECTIVES } from "@angular/common";
 import { RadioControlValueAccessor } from '../radioButton/index';
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { AdminService } from '../service/admin.service';
+//import { bootstrap } from '@angular/platform-browser-dynamic';
+import { PowerService } from '../service/power.service';
 import { Power } from '../models/index';
 import { Router } from '@angular/router';
 
@@ -17,21 +17,23 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 } )
 
 
-export class PowerEditComponent implements OnInit {
+export class PowerEditComponent implements ngOnInit {
 powers: Power[];
 selectedPower: Power;
 
 constructor(
         private router: Router,
-        private adminService: AdminService) { }
+        private service: PowerService) { }
 
       getPowers(): void {
-        this.adminService.getPowers().subscribe(( data: Response ) => {
+        this.service.gets().subscribe(( data: Response ) => {
       this.powers = data.json();
       console.log( data );
       }
+      }
 
       ngOnInit(): void {
+
         this.getPowers();
       }
 
@@ -39,9 +41,22 @@ constructor(
         this.selectedPower = power;
       }
 
-      gotoDetail(): void {
-        this.router.navigate(['/detailPower', this.selectedPower.id]);
+      add(): void {
+        this.router.navigate(['/admin/detailPower', 0]);
       }
+      
+      gotoDetail(): void {
+          this.router.navigate(['/admin/detailPower', this.selectedPower.id]);
+        }
+
+      goDelete(): void {
+          this.service.delete(this.selectedPower.id)
+                .subscribe(( data: Response ) => {
+              console.log( data );
+              this.getPowers();
+                } 
+      
     }
+}
     
 

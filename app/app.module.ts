@@ -1,3 +1,5 @@
+import './rxjs-extensions';
+
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
@@ -18,7 +20,7 @@ import { LoginMenanitComponent }   from './metanit/loginMenanit.component';
 //Authentication 
 import { AuthGuard } from './guard/auth.guard';
 //Используется index
-import { AuthenticationService, UserService } from './service/index';
+import { AuthenticationService, UserService, PowerService } from './service/index';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
@@ -27,7 +29,9 @@ import { RadioButtonCcomponent, RadioControlValueAccessor } from './radioButton/
 //metz
 import { OptionKTPComponent } from './metz/index';
 
-import { AdminComponent, PowerDetailComponent} from './admin/index';
+import { HeaderComponent } from './headerandfooter/index';
+
+import { AdminComponent, PowerDetailComponent, PowerEditComponent} from './admin/index';
 ////used to create fake backend
 //import { fakeBackendProvider } from './backend/fake-backend';
 //import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -44,14 +48,16 @@ import { AdminComponent, PowerDetailComponent} from './admin/index';
                     HomeComponent,
                     LoginMenanitComponent,
                     RadioButtonCcomponent, RadioControlValueAccessor,
-                    OptionKTPComponent, 
-                    AdminComponent, PowerDetailComponent, 
+                    OptionKTPComponent, HeaderComponent,
+                    AdminComponent, PowerDetailComponent, PowerEditComponent
                     ],
                     
                     providers: [
                                 AuthGuard,
                                 AuthenticationService,
                                 UserService,
+                                
+                                PowerService,
                          
                                 // providers used to create fake backend
 //                                fakeBackendProvider,

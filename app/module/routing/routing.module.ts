@@ -47,11 +47,13 @@ const appRoutes: Routes =[
                           { path: 'metanit', component: MetanitComponent, children: itemRoutes},
 //                          { path: '', component: HomeComponentMetanit }
 //                          { path: 'auth', children:authRoutes }
-                          { path: 'login', component: LoginComponent },
+//                          { path: 'login', component: LoginComponent },
+                        { path: 'login', redirectTo: 'metanit/login' },
+//                        { path: '**', redirectTo: '/'}
                           { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-                          { path: 'radio', component: RadioButtonCcomponent }
-                          { path: 'metz', component: OptionKTPComponent }
-                          { path: 'admin', component: AdminComponent, children: adminRoutes }
+                          { path: 'radio', component: RadioButtonCcomponent , canActivate: [AuthGuard] }
+                          { path: 'metz', component: OptionKTPComponent , canActivate: [AuthGuard] }
+                          { path: 'admin', component: AdminComponent, children: adminRoutes , canActivate: [AuthGuard] }
                           ];
 
 

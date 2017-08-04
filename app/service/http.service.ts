@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-//import {Http} from '@angular/http';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 @Injectable()
@@ -11,11 +10,11 @@ export class HttpService{
 constructor(private http: Http){ }
 
 getData(){
-  return this.http.get('users.json')
-//    console.log(this.token); 
-//  let headers = ({ 'Authorization':  this.token }); 
-//    let options = new RequestOptions({ headers: headers });    
-//    return this.http.get('http://localhost:9000/metanit/m', options )
+//  return this.http.get('users.json')
+    console.log(this.token); 
+  let headers = ({ 'Authorization':  this.token }); 
+    let options = new RequestOptions({ headers: headers });    
+    return this.http.get('http://localhost:9000/metanit/m', options )
 }
 
 getKTPAllField(){
