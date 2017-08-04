@@ -6,33 +6,23 @@ import { User, Power } from '../models/index'
 
 
 @Injectable()
-export class PowerService {
+export class KTPService {
     //    Создать сервис со всеми URL
     private powerUrl = 'http://localhost:9000/power';
 
-    //Попробовать перенести в AuthenticationService
-//    private headers = new Headers( {
-//        'Content-Type': 'application/json; charset=utf-8',
-//        //       'Authorization': 'Bearer ' + this.authenticationService.getToken()
-//        'Authorization':  + this.authenticationService.getToken()
-//    } );
-//    private options = new RequestOptions( { headers: this.headers } );
-//    //Попробовать перенести в AuthenticationService
+
 
     constructor(
         private http: Http,
         private authenticationService: AuthenticationService ) {
     }
 
+    getKTPAllField(){
+        return this.http.get( 'http://localhost:9000/value', this.authenticationService.getOptions() );
+      }
+    
     gets() {
-        //    For test
-        //    return this.http.get('ModelPowers.json')
-        //    For test
-        //    For work        
-//         let headers = ({ 'Authorization':  this.authenticationService.getToken() });
-//         console.log(headers);    
-//      let options = new RequestOptions({ headers: headers });    
-//        return this.http.get( this.powerUrl, options );
+
         return this.http.get( this.powerUrl, this.authenticationService.getOptions() );
 
     }

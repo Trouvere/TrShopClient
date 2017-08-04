@@ -17,7 +17,7 @@ import { LoginMenanitComponent }   from './login/loginMenanit.component';
 //Authentication 
 import { AuthGuard } from './guard/auth.guard';
 //Используется index
-import { AuthenticationService, UserService, PowerService } from './service/index';
+import { AuthenticationService, UserService, PowerService, KTPService } from './service/index';
 //import { LoginComponent } from './login/login.component';
 //import { HomeComponent } from './home/home.component';
 
@@ -55,7 +55,7 @@ import { AdminComponent, PowerDetailComponent, PowerEditComponent, PowerNewCompo
                                 AuthenticationService,
                                 UserService,
                                 
-                                PowerService,
+                                PowerService, KTPService
                          
                                 // providers used to create fake backend
 //                                fakeBackendProvider,

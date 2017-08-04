@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FORM_DIRECTIVES } from "@angular/common";
 import { RadioControlValueAccessor } from '../radioButton/index';
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { HttpService } from '../service/http.service';
-import { ModelKTPAllField } from './modelKTPAllField';
-import { ModelKTP } from './modelKTP';
+import { HttpService, KTPService } from '../service/index';
 
-//import { ModelKTPAllField, ModelKTP } from '../models/index';
+
+//import { ModelKTPAllField } from './modelKTPAllField';
+//import { ModelKTP } from './modelKTP';
+
+import { ModelKTPAllField, ModelKTP } from '../models/index';
 
 import { NgForm} from '@angular/forms';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
@@ -19,7 +21,7 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 } )
 
 //@Injectable()
-export class OptionKTPComponent implements OnInit {
+export class OptionKTPComponent implements ngOnInit {
 
     modelKTPAllField: ModelKTPAllField;
     modelKTP: ModelKTP;
@@ -35,7 +37,11 @@ export class OptionKTPComponent implements OnInit {
     powerAllField;
     submitted = false;
     myForm : FormGroup;
-    constructor( private httpService: HttpService ) {
+    constructor( 
+//            private service: HttpService
+            private service: KTPService
+
+    ) {
         this.myForm = new FormGroup({
             
             "typeKTP": new FormControl("", Validators.required),
@@ -65,12 +71,14 @@ export class OptionKTPComponent implements OnInit {
         
         console.log(this.myForm);
         console.log(this.myForm.invalid);
-        console.log(this.modelKTP);   
+        console.log(this.modelKTP);
+        
+        
     }
 
 
     ngOnInit() {
-        this.httpService.getKTPAllField()
+        this.service.getKTPAllField()
             .subscribe(( data: Response ) => {
                 this.modelKTPAllField = data.json();
                 console.log( data );
@@ -81,6 +89,9 @@ export class OptionKTPComponent implements OnInit {
 
                 console.log( this.powers );
                 console.log(this.myForm);
+                let person = { name: "Tom", age: 23 };
+                person = { name: "Alice" };
+                console.log( person);
             };
     }
 }
